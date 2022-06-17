@@ -1,23 +1,52 @@
+import React, {useState} from 'react';
+import axios from 'axios';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [searchText, setSearchText] = useState('');
+  const [playerData, setPlayerData] = useState({});
+
+  const API_KEY = 'RGAPI-3b2eb584-8b75-4f72-b9e9-c50750a5cfcb'
+
+
+  function serachForPlayer(event) {
+    // Set up the correct API call
+  const apiCall = "https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + searchText + '?api_key=' + API_KEY; 
+
+    // handle the API call
+    axios.get(apiCall).then(function (response) {
+
+      console.log(response.data);
+      setPlayerData(response.data);
+      console.log(playerData);
+    }).catch(function(error){
+      console.log(error)
+    });
+  }
+
+  console.log('playerData', playerData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='container'>
+      <h1>
+        League of Legends Player Search
+      </h1>
+      <input type="text" onChange={event => setSearchText(event.target.value)}></input>
+      <button onClick={event => serachForPlayer(event)}> Search for summoner</button>
+
+      </div>
+      <div>
+        {JSON.stringify(playerData) !== '{}' ?
+        <><p>Summoner Name: {playerData.name}</p>
+        <img width="100" height="100" src={'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' + playerData.profileIconId + '.png'}></img>
+        <p>Summoner Level: {playerData.summonerLevel}</p>
+        </> 
+        :
+        <><p>No Player Data</p></>
+      }
+      </div>
     </div>
   );
 }
