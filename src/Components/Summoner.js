@@ -38,8 +38,9 @@ const Summoner = (props) => {
       </div>
       <div>
         {JSON.stringify(playerData) !== '{}' ?
-        <><p>Summoner Name: {playerData.name}</p>
- ``         <img width="100" height="100" src={'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' + playerData.profileIconId + '.png'}></img>
+        <>
+        <p>Summoner Name: {playerData.name}</p>
+                <img width="100" height="100" src={'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' + playerData.profileIconId + '.png'}></img>
         <p>Summoner Level: {playerData.summonerLevel}</p>
         </> 
         :

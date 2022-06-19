@@ -11,7 +11,6 @@ function App() {
   const [searchText, setSearchText] = useState('');
   const [playerData, setPlayerData] = useState({});
   const [summonerMatchData, setSummonerMatchData] = useState('');
-  const [championName, setChampionName] = useState('')
 
 
 
@@ -43,14 +42,18 @@ function App() {
 
   return (
     <BrowserRouter>
+
     <div className="App">
       <>
 
       <div>
         <Summoner searchText={searchText} setSearchText={setSearchText} playerData={playerData} setPlayerData={setPlayerData}></Summoner>
       </div>
-      <div>
+      <div className='routes'>
         <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button>
+        <Routes>
+        <Route path="/Champions" element={<Champions></Champions>}/>
+        </Routes>
       </div>
 
 
