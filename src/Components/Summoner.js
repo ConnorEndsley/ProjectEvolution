@@ -77,11 +77,14 @@ const Summoner = (props) => {
         {JSON.stringify(champData) !== '{}'?
         <>
         {
-          
+          champData.map(champData => 
+            <div >
+             <p>ChampionData {champData.championId}</p>
+            </div>)
         }
         </>
         :
-        <p>Sorry! You have no mastery, please play to gain some!</p>}
+        <p>Please Press the button to view champion mastery</p>}
       </div>
         </div>
     )
