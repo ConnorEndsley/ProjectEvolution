@@ -42,6 +42,12 @@ const Summoner = (props) => {
       })
     }
 
+    // create helper function to map through the champions
+
+    // create a helper function to handle clicking on a chapion
+
+    // create a helper function to display the champions Icons using the dataDragon links.
+
     console.log('player data outside function', playerData);
 
     return(
