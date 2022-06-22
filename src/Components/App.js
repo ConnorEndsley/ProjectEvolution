@@ -13,33 +13,6 @@ function App() {
   const [summonerMatchData, setSummonerMatchData] = useState('');
 
 
-
-  
-
-  // function getSummonerMatchHistory(summonerId) {
-    
-  //   // Set up API call with 
-  //   // let summonerId = playerData.id;
-  //   console.log('summoner id in function', summonerId)
-  //   const summonerIdApiCall = 'https://na1.api.riotgames.com//lol/league/v4/entries/by-summoner/' +  summonerId + '?api_key=' + API_KEY;
-
-  //   // handle the API call
-  //   axios.get(summonerIdApiCall).then(function(response) {
-  //     console.log(response.data);
-  //     setSummonerMatchData(response.data);
-  //     console.log(summonerMatchData);
-      
-  //   }).catch(function(error){
-  //     console.log(error);
-  //   })
-  // }
-
-
-
-  // console.log(getSummonerMatchHistory('xDmQDaeJLEJfKVEC11QUisl8d8NzKwjui1jURqEEgb2bDmA'))
-
-  // console.log('playerData', playerData.summonerLevel);
-
   return (
     <BrowserRouter>
 

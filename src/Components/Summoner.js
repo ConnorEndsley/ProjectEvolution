@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 
 const Summoner = (props) => {
     const {searchText, setSearchText, playerData, setPlayerData} = props;
-    const API_KEY = 'RGAPI-740b0bef-ae50-4bab-911c-3cafb28acace'
+    const [champData, setChampData] = useState({});
+    const API_KEY = 'RGAPI-7ba766d6-0fd2-4d86-9d49-5204b1896a9f'
 
 
     function serachForPlayer(event) {
@@ -18,12 +18,30 @@ const Summoner = (props) => {
         console.log(response.data);
         setPlayerData(response.data);
         console.log(playerData);
+        localStorage.setItem('summonerId', playerData.id);
       }).catch(function(error){
         console.log(error)
       });
     }
-  
-  
+
+    const getSummonerMasteryData =  async (event) => {
+      // grab the summmonersId from localStorage
+      const id = localStorage.getItem('summonerId')
+      console.log('summonerId', id)
+      //set up the API call
+      const apiCall = 'https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + id + '?api_key=' + API_KEY; 
+
+       // handle the API callad
+      axios.get(apiCall).then(function (response) {
+        console.log('summoner champion mastery response', response);
+        console.log(response.data)
+        setChampData(response.data)
+        console.log('championData', champData);
+      }).catch(function(error){
+        console.log(error);
+      })
+    }
+
     console.log('player data outside function', playerData);
 
     return(
@@ -40,12 +58,30 @@ const Summoner = (props) => {
         {JSON.stringify(playerData) !== '{}' ?
         <>
         <p>Summoner Name: {playerData.name}</p>
-                <img width="100" height="100" src={'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' + playerData.profileIconId + '.png'}></img>
+         <img width="100" height="100" src={'http://ddragon.leagueoflegends.com/cdn/12.11.1/img/profileicon/' + playerData.profileIconId + '.png'}></img>
         <p>Summoner Level: {playerData.summonerLevel}</p>
         </> 
         :
         <><p>No Player Data</p></>
       }
+      </div>
+
+      <div className='summoner-champ-data'>
+      <h2>
+        Click to search your Champion Mastery
+      </h2>
+      <button onClick={event => getSummonerMasteryData(event)}>Click to get Champion Mastery</button>
+      </div>
+
+      <div>
+        {JSON.stringify(champData) !== '{}'?
+        <>
+        {
+          
+        }
+        </>
+        :
+        <p>Sorry! You have no mastery, please play to gain some!</p>}
       </div>
         </div>
     )
