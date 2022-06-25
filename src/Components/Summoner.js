@@ -5,7 +5,7 @@ import axios from 'axios';
 const Summoner = (props) => {
     const {searchText, setSearchText, playerData, setPlayerData} = props;
     const [champData, setChampData] = useState({});
-    const API_KEY = 'RGAPI-7ba766d6-0fd2-4d86-9d49-5204b1896a9f'
+    const API_KEY = 'RGAPI-99aa462a-5db5-4a1e-8a38-9f5399f06dab'
 
 
     function serachForPlayer(event) {

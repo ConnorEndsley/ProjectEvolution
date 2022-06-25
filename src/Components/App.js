@@ -11,13 +11,25 @@ function App() {
   const [searchText, setSearchText] = useState('');
   const [playerData, setPlayerData] = useState({});
   const [summonerMatchData, setSummonerMatchData] = useState('');
+  const [gameList, setGameList] = useState([]);
 
+  const getPlayerGames = (event) => {
+    console.log('hitting here')
+    axios.get("http://localhost:4000/past5games")
+    .then(function(response){
+      setGameList(response.data)
+    }).catch(function(error) {
+      console.log(error)
+    })
+  }
 
+  console.log(gameList)
   return (
     <BrowserRouter>
 
     <div className="App">
       <>
+
 
       <div>
         <Summoner searchText={searchText} setSearchText={setSearchText} playerData={playerData} setPlayerData={setPlayerData}></Summoner>
@@ -27,6 +39,12 @@ function App() {
         <Routes>
         <Route path="/Champions" element={<Champions></Champions>}/>
         </Routes>
+        <div>
+          <h2> Wecloms to our proxy server</h2>;
+          <input type="text" onChange={event => setSearchText(event.target.value)}></input>
+          <button onClick={getPlayerGames}>Get the past 5 games from your player</button>
+
+        </div>
       </div>
 
 
