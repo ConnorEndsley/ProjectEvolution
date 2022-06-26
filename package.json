@@ -2,6 +2,7 @@
   "name": "project-evolution",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost4000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -9,7 +10,7 @@
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.18.1",
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
@@ -20,7 +21,7 @@
     "client:dev": "react-scripts start",
     "client:build": "react-scripts build",
     "server:dev": "nodemon proxyServer.js",
-    "start:dev": "concurrently \"npm run client:build\" \"npm run client:dev\" \"npm run server:dev\"",
+    "start:dev": "\"npm run client:build\" \"npm run client:dev\" \"npm run server:dev\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
