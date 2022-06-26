@@ -20,7 +20,7 @@ function getPlayerPUUID(playerName){
 // localhost:4000/past5games
 app.get('/past5games', async (req, res) => {
     console.log('hitting here first')
-    const playerName = 'a schmelly goat';
+    const playerName = req.query.username;
     console.log(playerName)
     //PUUID
     const PUUID = await getPlayerPUUID(playerName);
