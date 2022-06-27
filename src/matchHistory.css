@@ -1,0 +1,14 @@
+.summoner-match{
+    border: solid 5px black;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.button{
+    background-color: black;
+    padding: 2px;
+    margin: 10px;
+
+}
+

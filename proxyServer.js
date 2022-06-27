@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const { response } = require('express');
 
 const app = express();
 
 app.use(cors());
 
-const API_KEY = 'RGAPI-99aa462a-5db5-4a1e-8a38-9f5399f06dab';
+const API_KEY = 'RGAPI-cb2c1336-d4d6-48f1-bcf6-5320fb5545e4';
 
 function getPlayerPUUID(playerName){
     return axios.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + API_KEY)
@@ -56,6 +57,23 @@ app.get('/past5games', async (req, res) => {
     // [game1Object, game2Object,..]
     res.json(matchDataArray);
 });
+
+    function getAllChampions (championName) {
+        return axios.get("http://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/" + championName)
+        .then(response => {
+            console.log('champion response', response.data)
+            return response.data.id;
+        }).catch(error => error);
+    }
+
+    app.get('/allChampions', async (req, res) => {
+        console.log('hitting this champion route')
+        const championName = req.query.id;
+        console.log(championName);
+        // get champion name
+        const champion = await getAllChampions(championName);
+        console.log("====CHAMPION====", champion)
+    })
 
 app.listen(4000, function() {
     console.log('Server is up on localhost 4000')
