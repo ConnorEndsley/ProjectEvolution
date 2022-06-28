@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 
-const API_KEY = 'RGAPI-cb2c1336-d4d6-48f1-bcf6-5320fb5545e4';
+const API_KEY = 'RGAPI-dbdca186-887d-4199-8965-2eb8eb062890';
 
 function getPlayerPUUID(playerName){
     return axios.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + API_KEY)
@@ -17,7 +17,7 @@ function getPlayerPUUID(playerName){
     }).catch(err => err) 
 }
 
-// GET past 5 games from user
+// GET past 5 games from user 
 // localhost:4000/past5games
 app.get('/past5games', async (req, res) => {
     console.log('hitting here first')

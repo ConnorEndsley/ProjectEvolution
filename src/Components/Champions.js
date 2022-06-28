@@ -24,7 +24,7 @@ const Champions = (props) => {
     
     function getChampionByName(event) {
         // Set up the correct API call
-        const API_KEY = 'RGAPI-740b0bef-ae50-4bab-911c-3cafb28acace'
+        const API_KEY = 'RGAPI-dbdca186-887d-4199-8965-2eb8eb062890'
         const championApiCall = 'http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json';
     
         // handle the API call
@@ -50,7 +50,7 @@ const Champions = (props) => {
         <button onClick={event=> getChampionByName(event)}> Search for a champion</button> 
         {JSON.stringify(champion) !== '{}' ?
         <>
-        {/* <p>Champion Name: {champion}</p> */}
+        <p>Champion Name: {champion}</p>
         </> 
         :
         <><p>No Player Data</p></>
