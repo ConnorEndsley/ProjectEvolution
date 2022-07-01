@@ -1,8 +1,18 @@
+.matchContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
 .summoner-match{
     border: solid 5px black;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+justify-content: space-evenly;
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .button{
@@ -10,5 +20,10 @@
     padding: 2px;
     margin: 10px;
 
+}
+
+p{
+    display: flex;
+    justify-content: space-evenly;
 }
 
