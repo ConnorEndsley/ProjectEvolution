@@ -1,7 +1,33 @@
+
+
+body{
+  height: 30vh;
+  width: 100%;
+  background-image: white;
+
+    background-image: url("../public/backgroundImage.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+/* You must set a specified height */
+  background-position: fixed; /* Center the image */
+  background-attachment: fixed;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
 .App {
   text-align: center;
-  display: flex;
+  height: 100%; 
   justify-content: center;
+  background-color: rgb(18, 19, 22);
+  color: rgb(0, 0, 0);
+  background-image: url("../public/backgroundImage.png");
+  background-color: #cccccc; /* Used if the image is unavailable */
+/* You must set a specified height */
+  background-position: fixed; /* Center the image */
+  background-attachment: fixed;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
 }
 
 .App-logo {
@@ -15,26 +41,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+.header {
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

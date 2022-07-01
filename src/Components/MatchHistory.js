@@ -26,27 +26,13 @@ const MatchHistory = (props) => {
         })
       }
 
-
-      const getMaps = () => {
-        console.log('in maps function');
-        axios.get("https://static.developer.riotgames.com/docs/lol/maps.json")
-        .then(function(response){
-          console.log('MAPS RESPONSE', response)
-          setMapData(response.data)
-        }).catch(function(error) {
-          console.log(error)
-        })
-      }
-    
-
-        console.log('MAPDATA', mapData)
     return (
-        <div>
-
-<div className="matchContainer">
-          <h2> Enter summoner name to get match history</h2>
+        <div id='matchHistory'>
           <input type="text" onChange={event => setSearchText(event.target.value)}></input>
           <button onClick={getPlayerGames}>Get the past 5 games from your player</button>
+<div className="matchContainer">
+          <h2> Enter summoner name to get match history</h2>
+
           {gameList.length === 0 ? 
 <p>Sorry, you have no match history!</p>
         :
@@ -61,7 +47,8 @@ const MatchHistory = (props) => {
               {gameData.info.participants.map((data, participantIndex) => 
 
               <div className='summoner-match'>
-              <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA {data.kills} / {data.deaths} / {data.assists} / Champion: <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/" + data.championName + ".png"}></img></p>
+              <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} / Champion: <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/" + data.championName + ".png"}></img></p>
+              <div>
               <p>Items:
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item1 + ".png"}></img>
@@ -71,10 +58,11 @@ const MatchHistory = (props) => {
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item5 + ".png"}></img>
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
-
-              <div>
-                <p>Summoner Spells: </p>
               </div>
+
+              {/* <div>
+                <p>Summoner Spells: </p>
+              </div> */}
 
               </div>
               )}

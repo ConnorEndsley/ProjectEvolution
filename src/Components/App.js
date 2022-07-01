@@ -6,6 +6,7 @@ import Champions from './Champions';
 import Summoner from './Summoner';
 import MatchHistory from './MatchHistory';
 
+
 import '../App.css';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-
+      
 
       <>
       {/* <div>
@@ -27,18 +28,20 @@ function App() {
       <div>
     <MatchHistory searchText={searchText} setSearchText={setSearchText} gameList={gameList} setGameList={setGameList}></MatchHistory>
   </div> */}
+  <header className='header'>
       <div className='routes'>
         <button className='summonerButton'><Link id="link" to="/Summoner">Go to Summoner Descriptions</Link></button>
         <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button>
         <button className='matchHistoryButton'><Link id="link" to="/MatchHistory">Go to Match History</Link></button>
-        <Routes>
+
+      </div>
+      </header>
+      <Routes>
         <Route path="/Summoner" element={<Summoner searchText={searchText} setSearchText={setSearchText} playerData={playerData} setPlayerData={setPlayerData}></Summoner>}/>
         <Route path="/Champions" element={<Champions></Champions>}/>
         <Route path="/MatchHistory" element={<MatchHistory searchText={searchText} setSearchText={setSearchText} gameList={gameList} setGameList={setGameList}></MatchHistory>
 }/>
         </Routes>
-      </div>
-
       </>
 
     </BrowserRouter>
