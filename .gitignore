@@ -13,6 +13,8 @@
 
 /.env
 
+/proxyServer.js
+
 # misc
 .DS_Store
 .env.local

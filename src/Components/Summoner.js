@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
-
 const Summoner = (props) => {
     const {searchText, setSearchText, playerData, setPlayerData} = props;
     const [champData, setChampData] = useState({});
@@ -25,22 +24,17 @@ const Summoner = (props) => {
     }
 
     const getSummonerMasteryData =  async (event) => {
-      // grab the summmonersId from localStorage
-      const id = localStorage.getItem('summonerId')
-      console.log('summonerId', id)
-      //set up the API call
-      const apiCall = 'https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + id + '?api_key=' + API_KEY; 
 
-       // handle the API callad
-      axios.get(apiCall).then(function (response) {
-        console.log('summoner champion mastery response', response);
-        console.log(response.data)
-        setChampData(response.data)
-        console.log('championData', champData);
-      }).catch(function(error){
-        console.log(error);
-      })
-    }
+        console.log('hitting here')
+        axios.get("http://localhost:4000/championMastery", { params: { username: searchText }})
+        .then(function(response){
+          console.log("inside function");
+          console.log(response)
+          setChampData(response.data)
+        }).catch(function(error) {
+          console.log(error)
+        })
+      }
 
     // create helper function to map through the champions
 
@@ -76,6 +70,7 @@ const Summoner = (props) => {
       <h2>
         Click to search your Champion Mastery
       </h2>
+      <input type='text' onChange={event => setSearchText(event.target.value)}></input>
       <button onClick={event => getSummonerMasteryData(event)}>Click to get Champion Mastery</button>
       </div>
 
@@ -84,8 +79,10 @@ const Summoner = (props) => {
         <>
         {
           champData.map(champData => 
-            <div >
-             <p>ChampionData {champData.championId}</p>
+            <div className='championMastery' >
+             <p>ChampionId {champData.championId}</p>
+             <p>Mastery Level: {champData.championLevel}</p>
+             <p>Mastery Points: {champData.championPoints}</p>
             </div>)
         }
         </>
