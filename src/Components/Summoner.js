@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import "../summoner.css"
 
 const Summoner = (props) => {
     const {searchText, setSearchText, playerData, setPlayerData} = props;
@@ -54,7 +55,7 @@ const Summoner = (props) => {
       <button onClick={event => serachForPlayer(event)}> Search for summoner</button>
 
       </div>
-      <div>
+      <div className='summoner-info'>
         {JSON.stringify(playerData) !== '{}' ?
         <>
         <p>Summoner Name: {playerData.name}</p>

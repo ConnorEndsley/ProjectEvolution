@@ -40,7 +40,7 @@ const MatchHistory = (props) => {
         <p>Here are your last 5 games!</p>
         {
           gameList.map((gameData, index) => 
-          <>
+          <div className='match-box'>
             <h2>Game {index + 1}</h2>
               <h3>Game Mode: {gameData.info.gameMode} <img width="100" height="100" src={"http://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map" + gameData.info.mapId + ".png"}></img> </h3>
             <div>
@@ -73,7 +73,7 @@ const MatchHistory = (props) => {
               </div>
               )}
             </div>
-          </>
+          </div>
           )
         }
         </>

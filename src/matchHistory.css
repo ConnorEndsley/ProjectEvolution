@@ -17,8 +17,21 @@ border: 1px solid red ;
 
 } */
 
-.summoner-match{
+.match-box{
     background-color: rgb(255, 255, 255);
+    max-width: 300px;
+    align-items: center;
+    margin-left: 3.5rem;
+    margin-right: 1rem;
+    float:left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 5px 0px black;
+}
+
+.summoner-match{
+    background-color: rgb(112, 177, 243);
     max-width: 300px;
     align-items: center;
     float: right;
