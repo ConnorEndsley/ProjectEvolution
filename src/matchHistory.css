@@ -13,25 +13,19 @@
 
 
 /* .matchContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-
-position: relative;
-    margin-top: 10px;
+border: 1px solid red ;
 
 } */
 
 .summoner-match{
-    border: 5px solid black;
-    padding: 10px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 3px black;
-    background-color: #6b6767;
+    background-color: rgb(255, 255, 255);
+    max-width: 300px;
+    align-items: center;
+    float: right;
     margin: 10px;
-    font-size: medium;
-    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 5px 0px black;
 }
 
 button{

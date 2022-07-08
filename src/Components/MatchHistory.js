@@ -26,7 +26,7 @@ const MatchHistory = (props) => {
         })
       }
 
-    return (
+      return (
         <div id='matchHistory'>
           <input type="text" onChange={event => setSearchText(event.target.value)}></input>
           <button onClick={getPlayerGames}>Get the past 5 games from your player</button>
@@ -47,7 +47,13 @@ const MatchHistory = (props) => {
               {gameData.info.participants.map((data, participantIndex) => 
 
               <div className='summoner-match'>
-              <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} / Champion: <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/" + data.championName + ".png"}></img></p>
+                <div>
+              <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} </p>
+              </div> 
+
+              <div>
+             <p> Champion: <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/" + data.championName + ".png"}></img></p>
+              </div>
               <div>
               <p>Items:
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
