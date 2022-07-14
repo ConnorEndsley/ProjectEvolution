@@ -37,7 +37,6 @@ app.get('/past5games', async (req, res) => {
     console.log('===============gameIds===========', gameIds)
 
     // loop through to give us a list of game IDs
-
     // loops through game IDs
     // at each loop, get the information based off the ID (API call)
     let matchDataArray = [];
@@ -51,29 +50,53 @@ app.get('/past5games', async (req, res) => {
         matchDataArray.push(matchData);
     }
 
-
-
     // save information in an array, give array as JSON response to user
     // [game1Object, game2Object,..]
     res.json(matchDataArray);
 });
 
-    function getAllChampions (championName) {
-        return axios.get("http://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/" + championName)
+    // function getAllChampions (championName) {
+    //     return axios.get("http://ddragon.leagueoflegends.com/cdn/12.12.1/data/en_US/" + championName)
+    //     .then(response => {
+    //         console.log('champion response', response.data)
+    //         return response.data.id;
+    //     }).catch(error => error);
+    // }
+
+    // app.get('/allChampions', async (req, res) => {
+    //     console.log('hitting this champion route')
+    //     const championName = req.query.id;
+    //     console.log(championName);
+    //     // get champion name
+    //     const champion = await getAllChampions(championName);
+    //     console.log("====CHAMPION====", champion)
+    // })
+
+
+    //function to get a players summonerId
+    function getPlayerSummonerId(playerName){
+        return axios.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + API_KEY)
         .then(response => {
-            console.log('champion response', response.data)
+            console.log(response.data);
             return response.data.id;
-        }).catch(error => error);
+        }).catch(err => err) 
     }
 
-    app.get('/allChampions', async (req, res) => {
-        console.log('hitting this champion route')
-        const championName = req.query.id;
-        console.log(championName);
-        // get champion name
-        const champion = await getAllChampions(championName);
-        console.log("====CHAMPION====", champion)
+    app.get('/championMastery', async (req, res) => {
+        console.log('HITTING INSIDE MASTERY CALL');
+        const playerName = req.query.username
+        const summonerId = await getPlayerSummonerId(playerName);
+        console.log('SUMMONER ID', summonerId);
+        const apiCall = 'https://na1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/' + summonerId + '?api_key=' + API_KEY; 
+        console.log('GOT PAST API CALL FOR MASTERY')
+
+        const champMastery = await axios.get(apiCall)
+        .then(response => response.data)
+        .catch(error => error)
+        console.log('CHAMPION MASTERY LOGGED', champMastery)
+        res.json(champMastery)
     })
+
 
 app.listen(4000, function() {
     console.log('Server is up on localhost 4000')

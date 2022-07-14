@@ -1,1 +1,3 @@
-export const fetchPlayerData = 
+export const fetchPlayerData = () => {
+    
+}
