@@ -58,16 +58,20 @@ const MatchHistory = (props) => {
               </div>
               <div>
               <p>Items:
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item1 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item2 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item3 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item4 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item5 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item1 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item2 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item3 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item4 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item5 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
               </div>
+<<<<<<< HEAD
                 {data.win === true ? "Win" : "Lose"}
+=======
+
+>>>>>>> 6baa02630d81d34980614a2d555b99ca5f50fc4f
               </div>
               )}
             </div>
