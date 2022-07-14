@@ -1,15 +1,10 @@
-/* #matchHistory{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 60%;
-    height: 100%;
+.matchHistory{
+border: solid red 1px;
+display:inline-grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
 
-    float: right;
-
-    box-shadow: 5px, 5px, #18272F; 
-} */
+}
 
 /* 
 .matchContainer{    
@@ -24,25 +19,23 @@
 
 .match-box{
     background-color: rgb(255, 255, 255);
-    max-width: 300px;
+    /* max-width: 500px; */
     align-items: center;
     margin-left: 3.5rem;
     margin-right: 1rem;
-    float:left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    /* float:left; */
+    
     box-shadow: 0 5px 5px 0px black;
 }
 
 .summoner-match{
     background-color: rgb(112, 177, 243);
-    max-width: 300px;
+    /* max-width: 500px; */
     align-items: center;
-    float: right;
+    /* float: right; */
     margin: 10px;
-    display: flex;
-    flex-direction: column;
+display: grid;
+grid-template-rows: max-content;
     box-shadow: 0 5px 5px 0px black;
 }
 

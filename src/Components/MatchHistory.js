@@ -28,7 +28,7 @@ const MatchHistory = (props) => {
       }
 
       return (
-        <div id='matchHistory'>
+        <div>
           <input type="text" onChange={event => setSearchText(event.target.value)}></input>
           <button onClick={getPlayerGames}>Get the past 5 games from your player</button>
 <div className="matchContainer">
@@ -37,7 +37,8 @@ const MatchHistory = (props) => {
           {gameList.length === 0 ? 
 <p>Sorry, you have no match history!</p>
         :
-        <> 
+        <div className='matchHistory'> 
+        <h3> Match history for {searchText}</h3>
         {
           gameList.map((gameData, index) =>
            
@@ -46,8 +47,8 @@ const MatchHistory = (props) => {
               <h3>Game Mode: {gameData.info.gameMode} <img width="100" height="100" src={"http://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map" + gameData.info.mapId + ".png"}></img> </h3>
             <div>
               {gameData.info.participants.map((data, participantIndex) => 
-
               <div className='summoner-match'>
+                
                 <div>
               <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} </p>
               </div> 
@@ -66,18 +67,14 @@ const MatchHistory = (props) => {
               <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
               </div>
-
-              {/* <div>
-                <p>Summoner Spells: </p>
-              </div> */}
-
+                {data.win === true ? "Win" : "Lose"}
               </div>
               )}
             </div>
           </div>
           )
         }
-        </>
+        </div>
 }
         </div>      
         </div>
