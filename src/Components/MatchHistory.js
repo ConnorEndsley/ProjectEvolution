@@ -50,19 +50,15 @@ const MatchHistory = (props) => {
               <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} / Champion: <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/champion/" + data.championName + ".png"}></img></p>
               <div>
               <p>Items:
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item1 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item2 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item3 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item4 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item5 + ".png"}></img>
-              <img width="30" height="30" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item0 + ".png"}></img> 
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item1 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item2 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item3 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item4 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item5 + ".png"}></img>
+              <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
               </div>
-
-              {/* <div>
-                <p>Summoner Spells: </p>
-              </div> */}
 
               </div>
               )}
