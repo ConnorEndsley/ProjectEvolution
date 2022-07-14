@@ -67,11 +67,6 @@ const MatchHistory = (props) => {
               <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
               </div>
-<<<<<<< HEAD
-                {data.win === true ? "Win" : "Lose"}
-=======
-
->>>>>>> 6baa02630d81d34980614a2d555b99ca5f50fc4f
               </div>
               )}
             </div>
