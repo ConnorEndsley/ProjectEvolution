@@ -1,6 +1,6 @@
 .matchHistory{
 border: solid red 1px;
-display:inline-grid;
+/* display:inline-grid; */
   grid-template-columns: auto auto auto;
   gap: 10px;
 
@@ -18,14 +18,8 @@ display:inline-grid;
 } */
 
 .match-box{
-    background-color: rgb(255, 255, 255);
-    /* max-width: 500px; */
-    align-items: center;
-    margin-left: 3.5rem;
-    margin-right: 1rem;
-    /* float:left; */
-    
-    box-shadow: 0 5px 5px 0px black;
+    display: flex;
+    flex-direction: column;
 }
 
 .summoner-match{
@@ -57,3 +51,13 @@ p{
     justify-content: space-evenly;
 }
 
+.summonerKDA{
+    text-decoration: wavy;
+}
+
+.match-details{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

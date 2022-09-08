@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import '../matchHistory.css'
+// import { getPlayerSummonerId } from './proxyServer';
 
 const MatchHistory = (props) => {
     const{searchText, setSearchText, gameList, setGameList} = props;
@@ -8,11 +9,9 @@ const MatchHistory = (props) => {
 
     console.log('hitting here in component')
 
-  //   useEffect(() => { (async () => {
-  //     const allRoutines = await getPlayerGames();
-  //     setGameList(allRoutines);
-  // })();
-  // });
+// useEffect( ()=> {
+//   getPlayerGames("a schmelly goat");
+// })
     
     const getPlayerGames = (event) => {
       // event.preventDefault();
@@ -29,27 +28,26 @@ const MatchHistory = (props) => {
 
       return (
         <div>
-          <input type="text" onChange={event => setSearchText(event.target.value)}></input>
+          <input type="text" placeholder="Summoner Name" onChange={event => setSearchText(event.target.value)}></input>
           <button onClick={getPlayerGames}>Get the past 5 games from your player</button>
-<div className="matchContainer">
+<>
           <h2> Enter summoner name to get match history</h2>
 
           {gameList.length === 0 ? 
 <p>Sorry, you have no match history!</p>
         :
-        <div className='matchHistory'> 
-        <h3> Match history for {searchText}</h3>
+        <> 
         {
           gameList.map((gameData, index) =>
            
           <div className='match-box'>
             <h2>Game {index + 1}</h2>
               <h3>Game Mode: {gameData.info.gameMode} <img width="100" height="100" src={"http://ddragon.leagueoflegends.com/cdn/6.8.1/img/map/map" + gameData.info.mapId + ".png"}></img> </h3>
-            <div>
+            <div className='match-details'>
               {gameData.info.participants.map((data, participantIndex) => 
               <div className='summoner-match'>
                 
-                <div>
+                <div className="summonerKDA">
               <p>Summoner: {participantIndex + 1}: {data.summonerName}, Role: {data.lane} / KDA: {data.kills} / {data.deaths} / {data.assists} </p>
               </div> 
 
@@ -67,20 +65,15 @@ const MatchHistory = (props) => {
               <img width="50" height="50" src={"http://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/" + data.item6 + ".png"}></img>
               </p>
               </div>
-<<<<<<< HEAD
-                {data.win === true ? "Win" : "Lose"}
-=======
-
->>>>>>> 6baa02630d81d34980614a2d555b99ca5f50fc4f
               </div>
               )}
             </div>
           </div>
           )
         }
-        </div>
+        </>
 }
-        </div>      
+        </>      
         </div>
     )
 }

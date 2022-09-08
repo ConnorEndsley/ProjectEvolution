@@ -31,14 +31,14 @@ function App() {
   <header className='header'>
       <div className='routes'>
         <button className='summonerButton'><Link id="link" to="/Summoner">Go to Summoner Descriptions</Link></button>
-        <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button>
+        {/* <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button> */}
         <button className='matchHistoryButton'><Link id="link" to="/MatchHistory">Go to Match History</Link></button>
 
       </div>
       </header>
       <Routes>
         <Route path="/Summoner" element={<Summoner searchText={searchText} setSearchText={setSearchText} playerData={playerData} setPlayerData={setPlayerData}></Summoner>}/>
-        <Route path="/Champions" element={<Champions></Champions>}/>
+        {/* <Route path="/Champions" element={<Champions></Champions>}/> */}
         <Route path="/MatchHistory" element={<MatchHistory searchText={searchText} setSearchText={setSearchText} gameList={gameList} setGameList={setGameList}></MatchHistory>
 }/>
         </Routes>
