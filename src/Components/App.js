@@ -28,7 +28,7 @@ function App() {
         <button className='matchHistoryButton'><Link id="link" to="/MatchHistory">Go to Match History</Link></button>
         <Routes>
         <Route path="/Champions" element={<Champions></Champions>}/>
-        <Route path="/MatchHistory" element={<MatchHistory></MatchHistory>}/>
+        <Route path="/" element={<MatchHistory></MatchHistory>}/>
         </Routes>
       </div>
   <div>
