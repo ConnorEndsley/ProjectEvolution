@@ -38,7 +38,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/Summoner" element={<Summoner searchText={searchText} setSearchText={setSearchText} playerData={playerData} setPlayerData={setPlayerData}></Summoner>}/>
-        <Route path="/Champions" element={<Champions></Champions>}/>
+        <Route path="/Champions" element={<Champions searchText={searchText} setSearchText={setSearchText}></Champions>}/>
         <Route path="/MatchHistory" element={<MatchHistory searchText={searchText} setSearchText={setSearchText} gameList={gameList} setGameList={setGameList}></MatchHistory>
 }/>
         </Routes>

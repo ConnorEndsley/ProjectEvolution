@@ -3,8 +3,8 @@ import axios from 'axios';
 
 
 const Champions = (props) => {
-    const [championName, setChampionName] = useState('')
-    const [champion, setChampion] = useState({});
+    const [searchText, setSearchText] = props
+    const [champion, setChampion] = useState([]);
 
 
 
@@ -24,7 +24,6 @@ const Champions = (props) => {
     
     function getChampionByName(event) {
         // Set up the correct API call
-        const API_KEY = 'RGAPI-79d88b4a-b61a-4669-849e-7645cd486c6c'
         const championApiCall = 'http://ddragon.leagueoflegends.com/cdn/12.11.1/data/en_US/champion.json';
     
         // handle the API call
@@ -32,8 +31,10 @@ const Champions = (props) => {
     
           console.log('response', response);
           const responseData = response.data
-          setChampion(responseData.data);
-          console.log('champion', champion);
+          console.log('RESPONSE DATA', responseData);
+          const championData = responseData.data
+          setChampion(championData)
+          console.log('CHAMPION DATA', setChampion)
         }).catch(function(error){
           throw (error)
         });
@@ -46,7 +47,7 @@ const Champions = (props) => {
             <p>Welcome to the Champions Page</p>
         </div> 
         <div>
-        <input type="text" onChange={event=> setChampionName(event.target.value)}></input>
+        <input type="text" onChange={event=> setSearchText(event.target.value)}></input>
         <button onClick={event=> getChampionByName(event)}> Search for a champion</button> 
         {JSON.stringify(champion) !== '{}' ?
         <>
