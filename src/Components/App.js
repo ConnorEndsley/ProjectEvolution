@@ -31,7 +31,7 @@ function App() {
   <header className='header'>
       <div className='routes'>
         <button className='summonerButton'><Link id="link" to="/Summoner">Go to Summoner Descriptions</Link></button>
-        <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button>
+        {/* <button className='championButton'><Link id="link" to="/Champions">Go to Champion Descriptions</Link></button> */}
         <button className='matchHistoryButton'><Link id="link" to="/MatchHistory">Go to Match History</Link></button>
 
       </div>

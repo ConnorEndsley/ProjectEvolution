@@ -1,7 +1,15 @@
 .matchHistory{
+<<<<<<< HEAD
     border: 1px solid #eee;
     border-radius: 10px;
     padding: 15px;
+=======
+border: solid red 1px;
+/* display:inline-grid; */
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+
+>>>>>>> 5289ca2f35b6664944954ff49718eb16a06584bf
 }
 
 /* /* 
@@ -15,14 +23,8 @@
 } */
 
 .match-box{
-    background-color: rgb(255, 255, 255);
-    /* max-width: 500px; */
-    align-items: center;
-    margin-left: 3.5rem;
-    margin-right: 1rem;
-    /* float:left; */
-    
-    box-shadow: 0 5px 5px 0px black;
+    display: flex;
+    flex-direction: column;
 }
 
 .summoner-match{
@@ -52,3 +54,13 @@ button{
 
 
 
+.summonerKDA{
+    text-decoration: wavy;
+}
+
+.match-details{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

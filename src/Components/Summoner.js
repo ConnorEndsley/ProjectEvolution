@@ -39,7 +39,7 @@ const Summoner = (props) => {
 
     // create helper function to map through the champions
 
-    // create a helper function to handle clicking on a chapion
+    // create a helper function to handle clicking on a champion
 
     // create a helper function to display the champions Icons using the dataDragon links.
 
@@ -51,7 +51,7 @@ const Summoner = (props) => {
       <h1>
         League of Legends Player Search
       </h1>
-      <input type="text" onChange={event => setSearchText(event.target.value)}></input>
+      <input type="text" placeholder='Summoner Name' onChange={event => setSearchText(event.target.value)}></input>
       <button onClick={event => serachForPlayer(event)}> Search for summoner</button>
 
       </div>
@@ -71,7 +71,7 @@ const Summoner = (props) => {
       <h2>
         Click to search your Champion Mastery
       </h2>
-      <input type='text' onChange={event => setSearchText(event.target.value)}></input>
+      <input type='text' placeholder="Summoner Name"onChange={event => setSearchText(event.target.value)}></input>
       <button onClick={event => getSummonerMasteryData(event)}>Click to get Champion Mastery</button>
       </div>
 
@@ -79,7 +79,7 @@ const Summoner = (props) => {
         {JSON.stringify(champData) !== '{}'?
         <>
         {
-          champData.map(champData => 
+          champData.slice(0, 10).map(champData => 
             <div className='championMastery' >
              <p>ChampionId {champData.championId}</p>
              <p>Mastery Level: {champData.championLevel}</p>

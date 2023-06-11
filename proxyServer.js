@@ -74,7 +74,7 @@ app.get('/past5games', async (req, res) => {
 
 
     //function to get a players summonerId
-    function getPlayerSummonerId(playerName){
+   function getPlayerSummonerId(playerName){
         return axios.get("https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" + playerName + "?api_key=" + API_KEY)
         .then(response => {
             console.log(response.data);
